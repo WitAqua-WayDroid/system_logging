@@ -27,7 +27,7 @@ using android::os::logcat::ILogcatManagerService;
 
 static sp<ILogcatManagerService> InitLogcatService() {
     return android::interface_cast<ILogcatManagerService>(
-            defaultServiceManager()->waitForService(String16("logcat")));
+            defaultServiceManager()->checkService(String16("logcat")));
 }
 
 static sp<ILogcatManagerService> GetLogcatService() {
